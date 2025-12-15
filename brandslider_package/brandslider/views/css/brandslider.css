@@ -1,0 +1,355 @@
+/**
+ * Brand Slider Styles
+ * 
+ * Override in your child theme:
+ * themes/YOUR_CHILD_THEME/assets/css/modules/brandslider/brandslider.css
+ */
+
+/* Section Container */
+.brand-slider-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.brand-slider-section .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Title */
+.brand-slider-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.brand-slider-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+/* Slider Wrapper */
+.brand-slider-wrapper {
+    position: relative;
+    padding: 0 50px;
+}
+
+/* Slider Container */
+.brand-slider {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Track */
+.brand-slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+/* Individual Slide */
+.brand-slide {
+    flex: 0 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.brand-slide a {
+    text-decoration: none;
+    display: block;
+}
+
+.brand-slide-inner {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+}
+
+.brand-slide-inner:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* Brand Image */
+.brand-image {
+    max-width: 100%;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: grayscale(30%);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.brand-slide-inner:hover .brand-image {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Placeholder for categories without images */
+.brand-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.brand-placeholder span {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Brand Name */
+.brand-name {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: auto;
+    transition: color 0.3s ease;
+}
+
+.brand-slide-inner:hover .brand-name {
+    color: #667eea;
+}
+
+/* Navigation Arrows */
+.brand-slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.brand-slider-nav:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.brand-slider-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.brand-slider-nav:disabled:hover {
+    background: #ffffff;
+    color: #333;
+    transform: translateY(-50%);
+}
+
+.brand-slider-prev {
+    left: 0;
+}
+
+.brand-slider-next {
+    right: 0;
+}
+
+/* Dots Pagination */
+.brand-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.brand-slider-dot {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.brand-slider-dot:hover {
+    background: #aaa;
+}
+
+.brand-slider-dot.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+    .brand-slider-wrapper {
+        padding: 0 40px;
+    }
+    
+    .brand-slider-nav {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 991px) {
+    .brand-slider-section {
+        padding: 40px 0;
+    }
+    
+    .brand-slider-title {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+    
+    .brand-slide-inner {
+        min-height: 160px;
+        padding: 20px 15px;
+    }
+    
+    .brand-image {
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .brand-slider-wrapper {
+        padding: 0 35px;
+    }
+    
+    .brand-slider-nav {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .brand-slider-nav svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .brand-slide-inner {
+        min-height: 140px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .brand-image {
+        max-height: 60px;
+        margin-bottom: 10px;
+    }
+    
+    .brand-name {
+        font-size: 0.85rem;
+    }
+    
+    .brand-placeholder {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .brand-placeholder span {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .brand-slider-section {
+        padding: 30px 0;
+    }
+    
+    .brand-slider-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .brand-slider-wrapper {
+        padding: 0 30px;
+    }
+    
+    .brand-slider-dots {
+        margin-top: 20px;
+    }
+    
+    .brand-slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Touch Device Enhancements */
+@media (hover: none) {
+    .brand-slide-inner:hover {
+        transform: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .brand-slide-inner:active {
+        transform: scale(0.98);
+    }
+    
+    .brand-image {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+}
+
+/* Animation for slide entrance */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.brand-slide {
+    animation: slideIn 0.4s ease forwards;
+}
+
+/* Pause animation on hover */
+.brand-slider-wrapper:hover .brand-slider-track {
+    animation-play-state: paused;
+}

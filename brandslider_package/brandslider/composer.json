@@ -1,0 +1,25 @@
+{
+    "name": "merlin/brandslider",
+    "description": "Display selected categories as a beautiful sliding carousel on homepage and other pages",
+    "license": "MIT",
+    "type": "prestashop-module",
+    "authors": [
+        {
+            "name": "Merlin"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Merlin\\BrandSlider\\": "src/"
+        },
+        "classmap": [
+            "brandslider.php"
+        ]
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
